@@ -1,0 +1,752 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>من نحن | مدرسة الخالدية</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #f7f9fa;
+            color: #183b48;
+        }
+
+        /* Header */
+
+        header {
+            background: #073b4c;
+            color: white;
+            padding: 15px 6%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img {
+            width: 62px;
+            height: 62px;
+            object-fit: contain;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .logo h2 {
+            font-size: 16px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #e5c46a;
+        }
+
+        .language-btn {
+            background: #e5c46a;
+            color: #073b4c;
+            border: none;
+            padding: 9px 17px;
+            border-radius: 7px;
+            font-family: inherit;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .language-btn:hover {
+            background: white;
+        }
+
+        /* Banner */
+
+        .page-banner {
+            background: linear-gradient(135deg, #073b4c, #176579);
+            color: white;
+            padding: 75px 8%;
+            text-align: center;
+        }
+
+        .page-banner .small-title {
+            color: #e5c46a;
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+
+        .page-banner h1 {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        .page-banner p {
+            color: #e5e9eb;
+            font-size: 16px;
+            line-height: 2;
+        }
+
+        /* General Sections */
+
+        .section {
+            padding: 65px 9%;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-heading h2 {
+            color: #073b4c;
+            font-size: 30px;
+        }
+
+        .gold-line {
+            width: 65px;
+            height: 4px;
+            background: #d9b653;
+            margin: 15px auto;
+            border-radius: 5px;
+        }
+
+        /* School History */
+
+        .history-card {
+            background: white;
+            padding: 38px;
+            border-radius: 16px;
+            border-right: 5px solid #d9b653;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+        }
+
+        .history-year {
+            display: inline-block;
+            background: #073b4c;
+            color: #e5c46a;
+            padding: 7px 20px;
+            border-radius: 30px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .history-card p,
+        .info-card p {
+            line-height: 2.2;
+            color: #596e76;
+            font-size: 16px;
+            text-align: justify;
+        }
+
+        /* Information Cards */
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .info-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border-bottom: 4px solid #d9b653;
+            transition: 0.3s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.09);
+        }
+
+        .card-icon {
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .info-card h3 {
+            color: #073b4c;
+            font-size: 21px;
+            margin-bottom: 15px;
+        }
+
+        /* Closing Message */
+
+        .closing {
+            background: #eaf1f3;
+            padding: 55px 9%;
+            text-align: center;
+        }
+
+        .closing p {
+            max-width: 900px;
+            margin: auto;
+            line-height: 2.3;
+            font-size: 17px;
+            color: #36545e;
+        }
+
+        /* Photo Gallery */
+
+        .gallery {
+            padding: 65px 8%;
+            background: white;
+        }
+
+        .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 280px));
+    gap: 22px;
+    justify-content: center;
+}
+
+        .gallery-item {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    height: auto;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #eaf1f3;
+}
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.06);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 35px 18px 15px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        /* Footer */
+
+        footer {
+            background: #073b4c;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            line-height: 2.1;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 850px) {
+
+            header {
+                flex-direction: column;
+            }
+
+            .header-left {
+                flex-direction: column;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 14px;
+            }
+
+            .page-banner h1 {
+                font-size: 29px;
+            }
+
+            .info-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .history-card {
+                padding: 25px;
+            }
+
+            .gallery-item {
+                height: 240px;
+            }
+
+            .section {
+                padding: 45px 6%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+
+        <div class="logo">
+
+            <img src="../image/logo.jfif" alt="شعار المدرسة">
+
+            <h2 data-i18n="schoolName">
+                مدرسة الخالدية الثانوية المختلطة
+            </h2>
+
+        </div>
+
+        <div class="header-left">
+
+            <nav>
+
+                <a href="index.html" data-i18n="home">الرئيسية</a>
+                <a href="about.html" class="active" data-i18n="about">من نحن</a>
+            <a href="btec.html" class="active">BTEC</a>
+                <a href="activities.html" data-i18n="activities">الأنشطة</a>
+                       <a href="https://www.facebook.com/share/1FtFyZgWst/">فيسبوك</a>
+            <a href="https://eman98856.github.io/eman.abu.mahfouth09/">حاسبة معدل التوجيهي </a>
+
+            </nav>
+
+            <button class="language-btn" id="languageToggle">
+                English
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- Page Banner -->
+
+    <section class="page-banner">
+
+        <p class="small-title" data-i18n="bannerSmall">
+            تاريخ من العطاء والتميز
+        </p>
+
+        <h1 data-i18n="pageTitle">من نحن</h1>
+
+        <p data-i18n="pageSubtitle">
+            مدرسة عريقة، وإنجازات مستمرة، وطموح نحو مستقبل أفضل.
+        </p>
+
+    </section>
+
+
+    <!-- School History -->
+
+    <section class="section">
+
+        <div class="section-heading">
+
+            <h2 data-i18n="historyTitle">نبذة عن المدرسة</h2>
+
+            <div class="gold-line"></div>
+
+        </div>
+
+        <div class="history-card">
+
+            <span class="history-year">1973</span>
+
+            <p data-i18n="historyText">
+
+                تأسست مدرسة الخالدية الثانوية المختلطة عام 1973،
+                وتُعد من المدارس الرائدة في محافظة المفرق، حيث كان لها
+                دور بارز في بناء أجيال متعاقبة أسهمت في خدمة الوطن والمجتمع.
+                وقد خرّجت المدرسة على مدار مسيرتها التعليمية الطويلة أفواجًا
+                من الطالبات الناجحات اللواتي واصلن تعليمهن وعملهن في مختلف المجالات،
+                فكان منهن الطبيبات والمهندسات والشرطيات والمعلمات والممرضات
+                وربات البيوت والأمهات اللواتي أسهمن في تنشئة أجيال واعية وفاعلة.
+
+            </p>
+
+        </div>
+
+
+        <!-- Achievements and Community -->
+
+        <div class="info-grid">
+
+            <div class="info-card">
+
+                <div class="card-icon">🏆</div>
+
+                <h3 data-i18n="achievementsTitle">
+                    إنجازاتنا وجوائزنا
+                </h3>
+
+                <p data-i18n="achievementsText">
+
+                    وتتميز المدرسة بسجل حافل من الإنجازات والجوائز التي حققتها
+                    عبر السنوات، إضافة إلى مشاركاتها الفاعلة في مبادرات وزارة
+                    التربية والتعليم، حيث برزت في مجالات متعددة منها:
+                    بيئتي الأجمل، وتحدي القراءة، والتفوق الرياضي في جائزة الملك
+                    عبدالله، وجائزة الأمير الحسن للعمل التطوعي، وحققت إنجازات
+                    مشرفة على مستوى المملكة، إلى جانب مشاركات ناجحة في مسابقات
+                    ذات طابع دولي.
+
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <div class="card-icon">🤝</div>
+
+                <h3 data-i18n="partnershipsTitle">
+                    الشراكات المجتمعية
+                </h3>
+
+                <p data-i18n="partnershipsText">
+
+                    كما تحرص المدرسة على تعزيز دورها المجتمعي من خلال شراكات
+                    فاعلة مع مؤسسات المجتمع المحلي، مثل الشرطة المجتمعية،
+                    ومركز صحي الخالدية، وقضاء الخالدية، بهدف خدمة المجتمع المحلي
+                    وإطلاق مبادرات نوعية تُسهم في دعم المرأة وتمكينها،
+                    ودعم مختلف فئات المجتمع، وترسيخ قيم التعاون والمسؤولية المجتمعية.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Closing Message -->
+
+    <section class="closing">
+
+        <div class="section-heading">
+
+            <h2 data-i18n="futureTitle">
+                مسيرتنا نحو المستقبل
+            </h2>
+
+            <div class="gold-line"></div>
+
+        </div>
+
+        <p data-i18n="futureText">
+
+            وتواصل مدرسة الخالدية الثانوية المختلطة رسالتها التربوية
+            والتعليمية بكل التزام، مستندة إلى تاريخ عريق ورؤية طموحة
+            لصناعة مستقبل أفضل لأبنائها وبناتها.
+
+        </p>
+
+    </section>
+
+
+    <!-- Photo Gallery -->
+
+    <section class="gallery">
+
+        <div class="section-heading">
+
+            <h2 data-i18n="galleryTitle">
+                معرض صور المدرسة
+            </h2>
+
+            <div class="gold-line"></div>
+
+            <p data-i18n="gallerySubtitle">
+                نعتز بذكرياتنا وأنشطتنا وإنجازاتنا.
+            </p>
+
+        </div>
+
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+
+                <img src="../image/Screenshot 2026-11-18 202152.png"
+                     alt="مدرسة الخالدية">
+
+                <div class="gallery-caption" data-i18n="photo1">
+                    مدرستنا
+                </div>
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img src="../image/فعالية.png"
+                     alt="الأنشطة المدرسية">
+
+                <div class="gallery-caption" data-i18n="photo2">
+                    الأنشطة المدرسية
+                </div>
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img src="../image/انجاز1.jfif"
+                     alt="إنجازات المدرسة">
+
+                <div class="gallery-caption" data-i18n="photo3">
+                    إنجازاتنا وتكريماتنا
+                </div>
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img src="../image/WhatsApp Image 2026-11-22 at 8.44.07 PM.jpeg"
+                     alt="فعاليات المدرسة">
+
+                <div class="gallery-caption" data-i18n="photo4">
+                    فعالياتنا ومبادراتنا
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- Footer -->
+    <footer>
+        <p data-i18n="schoolName">
+            مدرسة الخالدية الثانوية المختلطة / مديرية البادية الشمالية الغربية
+        </p>
+        <p data-i18n="location">
+            الخالدية - محافظة المفرق - المملكة الأردنية الهاشمية
+        </p>
+        <p data-i18n="copyright">
+            جميع الحقوق محفوظة © 2026
+        </p>
+
+    </footer>
+    <!-- Translation System -->
+    <script>
+        const translations = {
+
+            ar: {
+
+                schoolName: "مدرسة الخالدية الثانوية المختلطة / مديرية البادية الشمالية الغربية",
+
+                home: "الرئيسية",
+                about: "من نحن",
+                news: "الأخبار",
+                activities: "الأنشطة",
+                contact: "تواصل معنا",
+
+                bannerSmall: "تاريخ من العطاء والتميز",
+                pageTitle: "من نحن",
+                pageSubtitle: "مدرسة عريقة، وإنجازات مستمرة، وطموح نحو مستقبل أفضل.",
+
+                historyTitle: "نبذة عن المدرسة",
+
+                historyText: "تأسست مدرسة الخالدية الثانوية المختلطة عام 1973، وتُعد من المدارس الرائدة في محافظة المفرق، حيث كان لها دور بارز في بناء أجيال متعاقبة أسهمت في خدمة الوطن والمجتمع. وقد خرّجت المدرسة على مدار مسيرتها التعليمية الطويلة أفواجًا من الطالبات الناجحات اللواتي واصلن تعليمهن وعملهن في مختلف المجالات، فكان منهن الطبيبات والمهندسات والشرطيات والمعلمات والممرضات وربات البيوت والأمهات اللواتي أسهمن في تنشئة أجيال واعية وفاعلة.",
+
+                achievementsTitle: "إنجازاتنا وجوائزنا",
+
+                achievementsText: "وتتميز المدرسة بسجل حافل من الإنجازات والجوائز التي حققتها عبر السنوات، إضافة إلى مشاركاتها الفاعلة في مبادرات وزارة التربية والتعليم، حيث برزت في مجالات متعددة منها: بيئتي الأجمل، وتحدي القراءة، والتفوق الرياضي في جائزة الملك عبدالله، وجائزة الأمير الحسن للعمل التطوعي، وحققت إنجازات مشرفة على مستوى المملكة، إلى جانب مشاركات ناجحة في مسابقات ذات طابع دولي.",
+
+                partnershipsTitle: "الشراكات المجتمعية",
+
+                partnershipsText: "كما تحرص المدرسة على تعزيز دورها المجتمعي من خلال شراكات فاعلة مع مؤسسات المجتمع المحلي، مثل الشرطة المجتمعية، ومركز صحي الخالدية، وقضاء الخالدية، بهدف خدمة المجتمع المحلي وإطلاق مبادرات نوعية تُسهم في دعم المرأة وتمكينها، ودعم مختلف فئات المجتمع، وترسيخ قيم التعاون والمسؤولية المجتمعية.",
+
+                futureTitle: "مسيرتنا نحو المستقبل",
+
+                futureText: "وتواصل مدرسة الخالدية الثانوية المختلطة رسالتها التربوية والتعليمية بكل التزام، مستندة إلى تاريخ عريق ورؤية طموحة لصناعة مستقبل أفضل لأبنائها وبناتها.",
+
+                galleryTitle: "معرض صور المدرسة",
+
+                gallerySubtitle: "نعتز بذكرياتنا وأنشطتنا وإنجازاتنا.",
+
+                photo1: "مدرستنا",
+                photo2: "الأنشطة المدرسية",
+                photo3: "إنجازاتنا وتكريماتنا",
+                photo4: "فعالياتنا ومبادراتنا",
+
+                location: "الخالدية - محافظة المفرق - المملكة الأردنية الهاشمية",
+
+                copyright: "جميع الحقوق محفوظة © 2026"
+
+            },
+
+
+            en: {
+
+                schoolName: "Al Khalidiyah Secondary Co-educational School / Northwestern Badia Directorate",
+
+                home: "Home",
+                about: "About Us",
+                news: "News",
+                activities: "Activities",
+                contact: "Contact Us",
+
+                bannerSmall: "A History of Dedication and Excellence",
+                pageTitle: "About Us",
+                pageSubtitle: "A school with a rich history, lasting achievements and ambitions for a better future.",
+
+                historyTitle: "About Our School",
+
+                historyText: "Al Khalidiyah Secondary Co-educational School was established in 1973 and is considered one of the leading schools in Mafraq Governorate. It has played a prominent role in educating successive generations who have contributed to serving their country and community. Throughout its long educational journey, the school has graduated many successful female students who continued their education and careers in various fields. Among them are doctors, engineers, policewomen, teachers, nurses, homemakers and mothers who have helped raise aware and active generations.",
+
+                achievementsTitle: "Our Achievements and Awards",
+
+                achievementsText: "The school is distinguished by a rich record of achievements and awards gained over the years, as well as its active participation in the Ministry of Education's initiatives. It has excelled in several areas, including My Most Beautiful Environment, the Reading Challenge, athletic excellence in the King Abdullah Award, and the Prince Hassan Award for Voluntary Work. The school has achieved outstanding accomplishments at the national level, alongside successful participation in competitions with an international focus.",
+
+                partnershipsTitle: "Community Partnerships",
+
+                partnershipsText: "The school is committed to strengthening its community role through active partnerships with local community institutions, such as the Community Police, Al Khalidiyah Health Center and Al Khalidiyah District Administration. These partnerships aim to serve the local community and launch meaningful initiatives that contribute to supporting and empowering women, supporting different groups in society, and promoting the values of cooperation and social responsibility.",
+
+                futureTitle: "Our Journey Towards the Future",
+
+                futureText: "Al Khalidiyah Secondary Co-educational School continues its educational mission with dedication, building on a long-standing history and an ambitious vision to create a better future for its students.",
+
+                galleryTitle: "School Photo Gallery",
+
+                gallerySubtitle: "We are proud of our memories, activities and achievements.",
+
+                photo1: "Our School",
+                photo2: "School Activities",
+                photo3: "Our Achievements and Awards",
+                photo4: "Our Events and Initiatives",
+
+                location: "Al Khalidiyah - Mafraq Governorate - Hashemite Kingdom of Jordan",
+
+                copyright: "All Rights Reserved © 2026"
+
+            }
+
+        };
+
+
+        // Load saved language
+
+        let currentLanguage =
+            localStorage.getItem("schoolLanguage") || "ar";
+
+
+        const languageButton =
+            document.getElementById("languageToggle");
+
+
+        // Apply language
+
+        function applyLanguage(language) {
+
+            currentLanguage = language;
+
+            document.documentElement.lang = language;
+
+            document.documentElement.dir =
+                language === "ar" ? "rtl" : "ltr";
+
+
+            document.querySelectorAll("[data-i18n]").forEach(element => {
+
+                const key = element.getAttribute("data-i18n");
+
+                if (translations[language][key]) {
+                    element.textContent =
+                        translations[language][key];
+                }
+
+            });
+
+
+            languageButton.textContent =
+                language === "ar" ? "English" : "العربية";
+
+
+            document.title = language === "ar"
+                ? "من نحن | مدرسة الخالدية"
+                : "About Us | Al Khalidiyah School";
+
+        }
+
+
+        // Switch language and save it
+
+        function changeLanguage() {
+
+            const newLanguage =
+                currentLanguage === "ar" ? "en" : "ar";
+
+            localStorage.setItem(
+                "schoolLanguage",
+                newLanguage
+            );
+
+            applyLanguage(newLanguage);
+
+        }
+
+
+        languageButton.addEventListener(
+            "click",
+            changeLanguage
+        );
+
+
+        // Apply the previously selected language
+
+        applyLanguage(currentLanguage);
+
+
+    </script>
+<script src="chatbot-widget.js"></script>
+</body>
+
+</html>

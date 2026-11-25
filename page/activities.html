@@ -1,0 +1,1464 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>الأنشطة والفعاليات | مدرسة الخالدية</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background: #f7f9fa;
+    color: #183b48;
+}
+
+button, input, select {
+    font-family: inherit;
+}
+
+/* Header */
+
+header {
+    background: #073b4c;
+    color: white;
+    padding: 15px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 62px;
+    height: 62px;
+    object-fit: contain;
+    background: white;
+    border-radius: 50%;
+}
+
+.logo h2 {
+    font-size: 16px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #e5c46a;
+}
+
+.language-btn {
+    background: #e5c46a;
+    color: #073b4c;
+    border: none;
+    padding: 9px 17px;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Hero */
+
+.hero {
+    background: linear-gradient(135deg, #073b4c, #176579);
+    color: white;
+    padding: 85px 8%;
+    text-align: center;
+}
+
+.hero .small-title {
+    color: #e5c46a;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    max-width: 750px;
+    margin: auto;
+    color: #e9f0f2;
+    line-height: 2;
+    font-size: 16px;
+}
+
+/* Gallery Introduction */
+
+.gallery-section {
+    padding: 60px 7%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.section-heading h2 {
+    font-size: 29px;
+    color: #073b4c;
+}
+
+.gold-line {
+    width: 65px;
+    height: 4px;
+    background: #d9b653;
+    margin: 14px auto;
+    border-radius: 5px;
+}
+
+.section-heading p {
+    color: #71838a;
+    line-height: 2;
+}
+
+/* Search and Filters */
+
+.filters-area {
+    max-width: 1000px;
+    margin: 0 auto 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.search-box {
+    position: relative;
+    flex: 1;
+    min-width: 220px;
+    max-width: 350px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 13px 18px;
+    padding-inline-start: 42px;
+    border: 1px solid #dce5e8;
+    border-radius: 9px;
+    outline: none;
+    background: white;
+    font-size: 14px;
+}
+
+.search-box input:focus {
+    border-color: #176579;
+    box-shadow: 0 0 0 3px rgba(23,101,121,0.1);
+}
+
+.search-icon {
+    position: absolute;
+    inset-inline-start: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.filters-area select {
+    padding: 12px 15px;
+    border: 1px solid #dce5e8;
+    border-radius: 9px;
+    background: white;
+    color: #183b48;
+    outline: none;
+    cursor: pointer;
+}
+
+.type-filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 35px;
+}
+
+.filter-btn {
+    border: 1px solid #dce5e8;
+    background: white;
+    color: #31515c;
+    padding: 10px 22px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.filter-btn:hover {
+    border-color: #176579;
+    color: #176579;
+}
+
+.filter-btn.active {
+    background: #073b4c;
+    color: white;
+    border-color: #073b4c;
+}
+
+/* Results */
+
+.results-info {
+    margin-bottom: 20px;
+    color: #71838a;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Cards Grid */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(235px, 280px));
+    gap: 25px;
+    justify-content: center;
+    align-items: start;
+}
+
+/* Media Cards */
+
+.media-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.media-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.10);
+}
+
+.media-card[hidden] {
+    display: none !important;
+}
+
+/* Photo Cards */
+
+.photo-open {
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 0;
+    background: white;
+    text-align: start;
+    cursor: pointer;
+    position: relative;
+}
+
+.photo-frame {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background: #eaf1f3;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.media-card:hover .photo-frame img {
+    transform: scale(1.06);
+}
+
+.media-badge {
+    position: absolute;
+    top: 12px;
+    inset-inline-start: 12px;
+    background: #e5c46a;
+    color: #073b4c;
+    padding: 5px 13px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.card-caption {
+    padding: 18px;
+}
+
+.card-caption h3 {
+    font-size: 17px;
+    color: #073b4c;
+    margin-bottom: 8px;
+}
+
+.card-caption p {
+    color: #71838a;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* Video Cards */
+
+.video-frame {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    background: #102f3b;
+    overflow: hidden;
+}
+
+.video-frame video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.video-card .card-caption {
+    border-top: 1px solid #edf0f1;
+}
+
+.video-label {
+    display: inline-block;
+    background: #073b4c;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+/* Empty State */
+
+.empty-state {
+    text-align: center;
+    padding: 50px 15px;
+    color: #71838a;
+    font-size: 16px;
+    display: none;
+}
+
+.empty-state.show {
+    display: block;
+}
+
+.empty-state span {
+    display: block;
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+/* Photo Lightbox */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+.lightbox[hidden] {
+    display: none !important;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 850px;
+    width: 100%;
+    text-align: center;
+}
+
+.lightbox img {
+    display: block;
+    max-width: 100%;
+    max-height: 75vh;
+    margin: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.lightbox-caption {
+    color: white;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: -42px;
+    inset-inline-end: 0;
+    background: #e5c46a;
+    color: #073b4c;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 21px;
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: rgba(255,255,255,0.9);
+    color: #073b4c;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.lightbox-prev {
+    inset-inline-start: 12px;
+}
+
+.lightbox-next {
+    inset-inline-end: 12px;
+}
+
+/* Footer */
+
+footer {
+    background: #073b4c;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    line-height: 2.1;
+    font-size: 14px;
+}
+
+/* Responsive */
+
+@media (max-width: 850px) {
+
+    header {
+        flex-direction: column;
+    }
+
+    .header-left {
+        flex-direction: column;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 14px;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+    }
+
+    .gallery-section {
+        padding: 45px 5%;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .card-caption {
+        padding: 13px;
+    }
+
+    .lightbox-nav {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid .media-card {
+        width: min(100%, 300px);
+        justify-self: center;
+    }
+
+    .filters-area {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-box {
+        max-width: none;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Header -->
+
+<header>
+
+    <div class="logo">
+        <img src="../image/logo.jfif" alt="School Logo">
+
+        <h2 data-i18n="schoolName">
+            مدرسة الخالدية الثانوية المختلطة
+        </h2>
+    </div>
+
+    <div class="header-left">
+
+        <nav>
+            <a href="index.html" data-i18n="home">الرئيسية</a>
+            <a href="about.html" data-i18n="about">من نحن</a>
+    <a href="btec.html">BTEC</a>
+            <a href="activities.html" class="active" data-i18n="activities">الأنشطة</a>
+                    <a href="https://www.facebook.com/share/1FtFyZgWst/">فيسبوك</a>
+            <a href="https://eman98856.github.io/eman.abu.mahfouth09/">حاسبة معدل التوجيهي </a>
+        </nav>
+        <button class="language-btn" id="languageToggle">
+            English
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- Hero -->
+
+<section class="hero">
+
+    <p class="small-title" data-i18n="heroSmall">
+        الإبداع والمشاركة والتميز
+    </p>
+
+    <h1 data-i18n="heroTitle">
+        الأنشطة والفعاليات المدرسية
+    </h1>
+
+    <p data-i18n="heroDescription">
+        مساحة نشارك فيها أجمل لحظات مدرستنا، ونوثق أنشطتنا ومبادراتنا
+        وإنجازاتنا من خلال الصور والفيديوهات.
+    </p>
+
+</section>
+
+
+<!-- Gallery -->
+
+<section class="gallery-section">
+
+    <div class="section-heading">
+
+        <h2 data-i18n="galleryTitle">
+            معرض الأنشطة والفعاليات
+        </h2>
+
+        <div class="gold-line"></div>
+
+        <p data-i18n="galleryDescription">
+            اكتشفوا أنشطتنا المدرسية وتابعوا أبرز الفعاليات والذكريات.
+        </p>
+
+    </div>
+
+
+    <!-- Search -->
+
+    <div class="filters-area">
+
+        <div class="search-box">
+
+            <span class="search-icon">🔍</span>
+
+            <input
+                type="text"
+                id="searchInput"
+                data-placeholder-ar="ابحث عن نشاط..."
+                data-placeholder-en="Search activities..."
+                placeholder="ابحث عن نشاط..."
+            >
+
+        </div>
+
+
+        <select id="categoryFilter">
+
+            <option value="all" data-i18n="catAll">
+                جميع التصنيفات
+            </option>
+
+            <option value="school" data-i18n="catSchool">
+                أنشطة مدرسية
+            </option>
+
+            <option value="competition" data-i18n="catCompetition">
+                مسابقات
+            </option>
+
+            <option value="initiative" data-i18n="catInitiative">
+                مبادرات
+            </option>
+
+            <option value="event" data-i18n="catEvent">
+                فعاليات واحتفالات
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- Type Filters -->
+
+    <div class="type-filters">
+
+        <button class="filter-btn active" data-kind-filter="all" data-i18n="filterAll">
+            الكل
+        </button>
+
+        <button class="filter-btn" data-kind-filter="photo" data-i18n="filterPhotos">
+            الصور
+        </button>
+
+        <button class="filter-btn" data-kind-filter="video" data-i18n="filterVideos">
+            الفيديوهات
+        </button>
+
+    </div>
+
+
+    <p class="results-info" id="resultsCount" aria-live="polite"></p>
+
+
+    <!-- Gallery Cards -->
+
+    <div class="gallery-grid" id="galleryGrid">
+
+
+        <!-- Photo 1 -->
+
+        <article
+            class="media-card"
+            data-kind="photo"
+            data-category="school"
+        >
+
+            <button
+                class="photo-open"
+                type="button"
+                data-full="../image/activities/activity1.jpg"
+                aria-label="Open activity photo"
+            >
+
+                <div class="photo-frame">
+
+                    <img
+                        src="../image/WhatsApp Image 2026-11-22 at 8.44.07 PM(1).jpeg"
+                        alt="School activity"
+                        loading="lazy"
+                    >
+
+                    <span class="media-badge" data-i18n="photoLabel">
+                        صورة
+                    </span>
+
+                </div>
+
+                <div class="card-caption">
+
+                    <h3 data-i18n="photo1Title">
+                        الأنشطة المدرسية
+                    </h3>
+
+                    <p data-i18n="photo1Description">
+                        لحظات من أنشطتنا وفعالياتنا المدرسية.
+                    </p>
+
+                </div>
+
+            </button>
+
+        </article>
+
+
+        <!-- Photo 2 -->
+
+        <article
+            class="media-card"
+            data-kind="photo"
+            data-category="competition"
+        >
+
+            <button
+                class="photo-open"
+                type="button"
+                data-full="../image/activities/activity2.jpg"
+                aria-label="Open activity photo"
+            >
+
+                <div class="photo-frame">
+
+                    <img
+                        src="../image/WhatsApp Image 2026-11-22 at 9.46.42 PM.jpeg"
+                        alt="School competitions"
+                        loading="lazy"
+                    >
+
+                    <span class="media-badge" data-i18n="photoLabel">
+                        صورة
+                    </span>
+
+                </div>
+
+                <div class="card-caption">
+
+                    <h3 data-i18n="photo2Title">
+                        المسابقات والإنجازات
+                    </h3>
+
+                    <p data-i18n="photo2Description">
+                        مشاركات وتجارب نفخر بها.
+                    </p>
+
+                </div>
+
+            </button>
+
+        </article>
+
+
+        <!-- Photo 3 -->
+
+        <article
+            class="media-card"
+            data-kind="photo"
+            data-category="initiative"
+        >
+
+            <button
+                class="photo-open"
+                type="button"
+                data-full="../image/activities/activity3.jpg"
+                aria-label="Open activity photo"
+            >
+
+                <div class="photo-frame">
+
+                    <img
+                        src="../image/فعالية.png"
+                        alt="School initiatives"
+                        loading="lazy"
+                    >
+
+                    <span class="media-badge" data-i18n="photoLabel">
+                        صورة
+                    </span>
+
+                </div>
+
+                <div class="card-caption">
+
+                    <h3 data-i18n="photo3Title">
+                        المبادرات المدرسية
+                    </h3>
+
+                    <p data-i18n="photo3Description">
+                        مبادرات تعزز التعاون والعطاء.
+                    </p>
+
+                </div>
+
+            </button>
+
+        </article>
+
+
+        <!-- Photo 4 -->
+
+        <article
+            class="media-card"
+            data-kind="photo"
+            data-category="event"
+        >
+
+            <button
+                class="photo-open"
+                type="button"
+                data-full="../image/activities/activity4.jpg"
+                aria-label="Open activity photo"
+            >
+
+                <div class="photo-frame">
+
+                    <img
+                        src="../image/انجاز.jpg"
+                        alt="School events"
+                        loading="lazy"
+                    >
+
+                    <span class="media-badge" data-i18n="photoLabel">
+                        صورة
+                    </span>
+
+                </div>
+
+                <div class="card-caption">
+
+                    <h3 data-i18n="photo4Title">
+                        الفعاليات والاحتفالات
+                    </h3>
+
+                    <p data-i18n="photo4Description">
+                        ذكريات مميزة من المناسبات المدرسية.
+                    </p>
+
+                </div>
+
+            </button>
+
+        </article>
+
+
+        <!-- Video 1 -->
+
+        <article
+            class="media-card video-card"
+            data-kind="video"
+            data-category="school"
+        >
+
+            <div class="video-frame">
+
+                <video controls preload="metadata">
+                    <source
+                        src="../WhatsApp Video 2026-11-22 at 3.37.08 PM.mp4"
+                        type="video/mp4"
+                    >
+                    متصفحك لا يدعم تشغيل الفيديو.
+                </video>
+
+            </div>
+
+            <div class="card-caption">
+
+                <span class="video-label" data-i18n="videoLabel">
+                    فيديو
+                </span>
+
+                <h3 data-i18n="video1Title">
+                    من أنشطة المدرسة
+                </h3>
+
+                <p data-i18n="video1Description">
+                    شاهدوا لقطات من أنشطتنا المدرسية.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- Video 2 -->
+
+        <article
+            class="media-card video-card"
+            data-kind="video"
+            data-category="event"
+        >
+
+            <div class="video-frame">
+
+                <video controls preload="metadata">
+                    <source
+                        src="../WhatsApp Video 2026-11-22 at 3.36.15 PM.mp4"
+                        type="video/mp4"
+                    >
+                    متصفحك لا يدعم تشغيل الفيديو.
+                </video>
+
+            </div>
+
+            <div class="card-caption">
+
+                <span class="video-label" data-i18n="videoLabel">
+                    فيديو
+                </span>
+
+                <h3 data-i18n="video2Title">
+                    فعالياتنا المدرسية
+                </h3>
+
+                <p data-i18n="video2Description">
+                    مشاهد وذكريات من فعاليات المدرسة.
+                </p>
+
+            </div>
+
+        </article>
+
+    </div>
+
+
+    <!-- No Results -->
+
+    <div class="empty-state" id="emptyState">
+
+        <span>🔎</span>
+
+        <p data-i18n="noResults">
+            لم يتم العثور على أنشطة مطابقة للبحث.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- Photo Lightbox -->
+
+<div class="lightbox" id="lightbox" hidden>
+
+    <div class="lightbox-content">
+
+        <button
+            class="close-lightbox"
+            id="closeLightbox"
+            aria-label="Close"
+        >
+            ×
+        </button>
+
+        <img id="lightboxImage" src="" alt="">
+
+        <p class="lightbox-caption" id="lightboxCaption"></p>
+
+        <button
+            class="lightbox-nav lightbox-prev"
+            id="prevPhoto"
+            aria-label="Previous photo"
+        >
+            ❮
+        </button>
+
+        <button
+            class="lightbox-nav lightbox-next"
+            id="nextPhoto"
+            aria-label="Next photo"
+        >
+            ❯
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- Footer -->
+
+<footer>
+
+    <p data-i18n="schoolName">
+        مدرسة الخالدية الثانوية المختلطة / البادية الغربية
+    </p>
+
+    <p data-i18n="location">
+        الخالدية - محافظة المفرق - المملكة الأردنية الهاشمية
+    </p>
+
+    <p data-i18n="copyright">
+        جميع الحقوق محفوظة © 2026
+    </p>
+
+</footer>
+
+
+<!-- JavaScript -->
+
+<script>
+
+// Translation Dictionary
+
+const translations = {
+
+    ar: {
+
+        schoolName: "مدرسة الخالدية الثانوية المختلطة / البادية الغربية",
+
+        home: "الرئيسية",
+        about: "من نحن",
+        news: "الأخبار",
+        activities: "الأنشطة",
+        contact: "تواصل معنا",
+
+        heroSmall: "الإبداع والمشاركة والتميز",
+        heroTitle: "الأنشطة والفعاليات المدرسية",
+
+        heroDescription: "مساحة نشارك فيها أجمل لحظات مدرستنا، ونوثق أنشطتنا ومبادراتنا وإنجازاتنا من خلال الصور والفيديوهات.",
+
+        galleryTitle: "معرض الأنشطة والفعاليات",
+
+        galleryDescription: "اكتشفوا أنشطتنا المدرسية وتابعوا أبرز الفعاليات والذكريات.",
+
+        catAll: "جميع التصنيفات",
+        catSchool: "أنشطة مدرسية",
+        catCompetition: "مسابقات",
+        catInitiative: "مبادرات",
+        catEvent: "فعاليات واحتفالات",
+
+        filterAll: "الكل",
+        filterPhotos: "الصور",
+        filterVideos: "الفيديوهات",
+
+        photoLabel: "صورة",
+        videoLabel: "فيديو",
+
+        photo1Title: "الأنشطة المدرسية",
+        photo1Description: "لحظات من أنشطتنا وفعالياتنا المدرسية.",
+
+        photo2Title: "المسابقات والإنجازات",
+        photo2Description: "مشاركات وتجارب نفخر بها.",
+
+        photo3Title: "المبادرات المدرسية",
+        photo3Description: "مبادرات تعزز التعاون والعطاء.",
+
+        photo4Title: "الفعاليات والاحتفالات",
+        photo4Description: "ذكريات مميزة من المناسبات المدرسية.",
+
+        video1Title: "من أنشطة المدرسة",
+        video1Description: "شاهدوا لقطات من أنشطتنا المدرسية.",
+
+        video2Title: "فعالياتنا المدرسية",
+        video2Description: "مشاهد وذكريات من فعاليات المدرسة.",
+
+        noResults: "لم يتم العثور على أنشطة مطابقة للبحث.",
+
+        location: "الخالدية - محافظة المفرق - المملكة الأردنية الهاشمية",
+
+        copyright: "جميع الحقوق محفوظة © 2026",
+
+        resultsOne: "تم العثور على عنصر واحد",
+        resultsMany: "عدد العناصر المعروضة: ",
+
+        close: "إغلاق",
+        previous: "الصورة السابقة",
+        next: "الصورة التالية"
+
+    },
+
+
+    en: {
+
+        schoolName: "Al Khalidiyah Secondary Co-educational School / Western Badia",
+
+        home: "Home",
+        about: "About Us",
+        news: "News",
+        activities: "Activities",
+        contact: "Contact Us",
+
+        heroSmall: "Creativity, Participation and Excellence",
+        heroTitle: "School Activities and Events",
+
+        heroDescription: "A space to share our school's memorable moments and document our activities, initiatives and achievements through photos and videos.",
+
+        galleryTitle: "Activities and Events Gallery",
+
+        galleryDescription: "Explore our school activities and discover our events and memories.",
+
+        catAll: "All Categories",
+        catSchool: "School Activities",
+        catCompetition: "Competitions",
+        catInitiative: "Initiatives",
+        catEvent: "Events and Celebrations",
+
+        filterAll: "All",
+        filterPhotos: "Photos",
+        filterVideos: "Videos",
+
+        photoLabel: "Photo",
+        videoLabel: "Video",
+
+        photo1Title: "School Activities",
+        photo1Description: "Moments from our school activities and events.",
+
+        photo2Title: "Competitions and Achievements",
+        photo2Description: "Participation and experiences we are proud of.",
+
+        photo3Title: "School Initiatives",
+        photo3Description: "Initiatives that encourage cooperation and giving.",
+
+        photo4Title: "Events and Celebrations",
+        photo4Description: "Special memories from school occasions.",
+
+        video1Title: "School Activities",
+        video1Description: "Watch moments from our school activities.",
+
+        video2Title: "School Events",
+        video2Description: "Scenes and memories from school events.",
+
+        noResults: "No matching activities were found.",
+
+        location: "Al Khalidiyah - Mafraq Governorate - Hashemite Kingdom of Jordan",
+
+        copyright: "All Rights Reserved © 2026",
+
+        resultsOne: "1 item found",
+        resultsMany: "Items displayed: ",
+
+        close: "Close",
+        previous: "Previous photo",
+        next: "Next photo"
+
+    }
+
+};
+
+
+// Saved Language
+
+let currentLanguage =
+    localStorage.getItem("schoolLanguage") || "ar";
+
+const languageButton =
+    document.getElementById("languageToggle");
+
+
+function applyLanguage(language) {
+
+    currentLanguage = language;
+
+    document.documentElement.lang = language;
+
+    document.documentElement.dir =
+        language === "ar" ? "rtl" : "ltr";
+
+    document.querySelectorAll("[data-i18n]").forEach(element => {
+
+        const key = element.getAttribute("data-i18n");
+
+        if (translations[language][key]) {
+            element.textContent = translations[language][key];
+        }
+
+    });
+
+    document.querySelectorAll("[data-placeholder-ar]").forEach(element => {
+
+        element.placeholder =
+            language === "ar"
+                ? element.dataset.placeholderAr
+                : element.dataset.placeholderEn;
+
+    });
+
+    languageButton.textContent =
+        language === "ar" ? "English" : "العربية";
+
+    document.title = language === "ar"
+        ? "الأنشطة والفعاليات | مدرسة الخالدية"
+        : "Activities and Events | Al Khalidiyah School";
+
+    updateResults();
+
+}
+
+
+function changeLanguage() {
+
+    const newLanguage =
+        currentLanguage === "ar" ? "en" : "ar";
+
+    localStorage.setItem("schoolLanguage", newLanguage);
+
+    applyLanguage(newLanguage);
+
+}
+
+
+languageButton.addEventListener("click", changeLanguage);
+
+
+// Gallery Filtering
+
+const cards = [...document.querySelectorAll(".media-card")];
+
+const typeButtons = [...document.querySelectorAll("[data-kind-filter]")];
+
+const categoryFilter = document.getElementById("categoryFilter");
+
+const searchInput = document.getElementById("searchInput");
+
+const emptyState = document.getElementById("emptyState");
+
+const resultsCount = document.getElementById("resultsCount");
+
+let selectedKind = "all";
+
+
+function filterGallery() {
+
+    const selectedCategory = categoryFilter.value;
+
+    const searchText = searchInput.value.trim().toLowerCase();
+
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+
+        const matchesKind =
+            selectedKind === "all" ||
+            card.dataset.kind === selectedKind;
+
+        const matchesCategory =
+            selectedCategory === "all" ||
+            card.dataset.category === selectedCategory;
+
+        const matchesSearch =
+            card.innerText.toLowerCase().includes(searchText);
+
+        const visible =
+            matchesKind && matchesCategory && matchesSearch;
+
+        card.hidden = !visible;
+
+        if (visible) {
+            visibleCount++;
+        }
+
+    });
+
+    emptyState.classList.toggle("show", visibleCount === 0);
+
+    updateResults(visibleCount);
+
+}
+
+
+function updateResults(count = null) {
+
+    if (count === null) {
+        count = cards.filter(card => !card.hidden).length;
+    }
+
+    if (currentLanguage === "ar") {
+
+        resultsCount.textContent = count === 1
+            ? translations.ar.resultsOne
+            : translations.ar.resultsMany + count;
+
+    } else {
+
+        resultsCount.textContent = count === 1
+            ? translations.en.resultsOne
+            : translations.en.resultsMany + count;
+
+    }
+
+}
+
+
+typeButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        selectedKind = button.dataset.kindFilter;
+
+        typeButtons.forEach(item => {
+            item.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        filterGallery();
+
+    });
+
+});
+
+
+categoryFilter.addEventListener("change", filterGallery);
+
+searchInput.addEventListener("input", filterGallery);
+
+
+// Image Lightbox
+
+const lightbox = document.getElementById("lightbox");
+
+const lightboxImage = document.getElementById("lightboxImage");
+
+const lightboxCaption = document.getElementById("lightboxCaption");
+
+const closeLightboxButton = document.getElementById("closeLightbox");
+
+const previousButton = document.getElementById("prevPhoto");
+
+const nextButton = document.getElementById("nextPhoto");
+
+let currentPhotoIndex = 0;
+
+
+function getVisiblePhotos() {
+
+    return [...document.querySelectorAll(".photo-open")]
+        .filter(button => !button.closest(".media-card").hidden);
+
+}
+
+
+function showPhoto(index) {
+
+    const visiblePhotos = getVisiblePhotos();
+
+    if (visiblePhotos.length === 0) return;
+
+    currentPhotoIndex =
+        (index + visiblePhotos.length) % visiblePhotos.length;
+
+    const selectedButton = visiblePhotos[currentPhotoIndex];
+
+    lightboxImage.src = selectedButton.dataset.full;
+
+    lightboxImage.alt =
+        selectedButton.querySelector("img").alt;
+
+    lightboxCaption.textContent =
+        selectedButton.querySelector(".card-caption h3").textContent;
+
+    previousButton.hidden = visiblePhotos.length < 2;
+
+    nextButton.hidden = visiblePhotos.length < 2;
+
+}
+
+
+function openLightbox(button) {
+
+    const visiblePhotos = getVisiblePhotos();
+
+    currentPhotoIndex = visiblePhotos.indexOf(button);
+
+    showPhoto(currentPhotoIndex);
+
+    lightbox.hidden = false;
+
+    document.body.style.overflow = "hidden";
+
+}
+
+
+function closeLightbox() {
+
+    lightbox.hidden = true;
+
+    lightboxImage.src = "";
+
+    document.body.style.overflow = "";
+
+}
+
+
+document.querySelectorAll(".photo-open").forEach(button => {
+
+    button.addEventListener("click", () => {
+        openLightbox(button);
+    });
+
+});
+
+
+closeLightboxButton.addEventListener("click", closeLightbox);
+
+
+lightbox.addEventListener("click", event => {
+
+    if (event.target === lightbox) {
+        closeLightbox();
+    }
+
+});
+
+
+previousButton.addEventListener("click", () => {
+    showPhoto(currentPhotoIndex - 1);
+});
+
+
+nextButton.addEventListener("click", () => {
+    showPhoto(currentPhotoIndex + 1);
+});
+
+
+document.addEventListener("keydown", event => {
+
+    if (lightbox.hidden) return;
+
+    if (event.key === "Escape") {
+        closeLightbox();
+    }
+
+    if (event.key === "ArrowRight") {
+        showPhoto(currentPhotoIndex + 1);
+    }
+
+    if (event.key === "ArrowLeft") {
+        showPhoto(currentPhotoIndex - 1);
+    }
+
+});
+
+
+// Initial Setup
+
+applyLanguage(currentLanguage);
+
+filterGallery();
+
+</script>
+<script src="chatbot-widget.js"></script>
+
+</body>
+</html>

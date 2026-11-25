@@ -1,0 +1,475 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>مدرسة الخالدية الثانوية المختلطة</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #f7f9fa;
+            color: #183b48;
+        }
+
+        /* Header */
+
+        header {
+            background: #073b4c;
+            color: white;
+            padding: 15px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img {
+            width: 65px;
+            height: 65px;
+            object-fit: contain;
+            border-radius: 50%;
+            background: white;
+        }
+
+        .logo h2 {
+            font-size: 18px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #e5c46a;
+        }
+
+        /* Language Button */
+
+        .language-btn {
+            background: #e5c46a;
+            color: #073b4c;
+            border: none;
+            padding: 9px 17px;
+            border-radius: 7px;
+            font-family: inherit;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .language-btn:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+
+        .hero {
+            min-height: 500px;
+
+            background:
+                linear-gradient(
+                    rgba(4, 43, 56, 0.75),
+                    rgba(4, 43, 56, 0.75)
+                ),
+                url('image/school.jpg');
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+            padding: 60px 10%;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 2;
+            margin-bottom: 30px;
+        }
+
+        .hero button {
+            background: #e5c46a;
+            color: #073b4c;
+            border: none;
+            padding: 13px 30px;
+            border-radius: 8px;
+            font-family: inherit;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .hero button:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        /* Welcome Section */
+
+        .section {
+            padding: 65px 8%;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+            color: #073b4c;
+        }
+
+        .section p {
+            line-height: 2;
+            color: #647780;
+        }
+
+        .gold-line {
+            width: 65px;
+            height: 4px;
+            background: #d9b653;
+            margin: 15px auto 30px;
+            border-radius: 5px;
+        }
+
+        /* Footer */
+
+        footer {
+            background: #073b4c;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            line-height: 2;
+        }
+
+        /* Responsive Design */
+
+        @media (max-width: 850px) {
+
+            header {
+                flex-direction: column;
+            }
+
+            .header-left {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero {
+                min-height: 400px;
+                padding: 40px 7%;
+            }
+
+            .hero h1 {
+                font-size: 29px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .logo h2 {
+                font-size: 15px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+
+        <div class="logo">
+
+            <img src="../image/logo.jfif" alt="School Logo">
+
+            <h2 data-i18n="schoolName">
+                مدرسة الخالدية الثانوية المختلطة
+            </h2>
+
+        </div>
+
+        <div class="header-left">
+
+<nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="about.html">من نحن</a>
+    <a href="btec.html">BTEC</a>
+    <a href="activities.html">الأنشطة</a>
+     <a href="https://www.facebook.com/share/1FtFyZgWst/">فيسبوك</a>
+            <a href="https://eman98856.github.io/eman.abu.mahfouth09/">حاسبة معدل التوجيهي </a>
+</nav>
+            <button class="language-btn" id="languageToggle">
+                English
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- Hero Section -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1 data-i18n="welcome">
+                مرحباً بكم في مدرسة الخالدية الثانوية المختلطة
+            </h1>
+
+            <p data-i18n="description">
+                معاً نحو تعليم متميز، وجيل مبدع،
+                يمتلك العلم والقيم والمهارات لبناء المستقبل.
+            </p>
+        </div>
+
+    </section
+    <!-- Welcome Section -->
+
+    <section class="section">
+
+        <h2 data-i18n="greeting">
+            أهلاً وسهلاً بكم
+        </h2>
+
+        <div class="gold-line"></div>
+
+        <p data-i18n="intro">
+
+            نرحب بكم في الموقع الإلكتروني لمدرسة الخالدية الثانوية المختلطة،
+            منصتكم للتعرف على المدرسة وأنشطتها وإنجازاتها
+             ومتابعة آخر أخبارها وفعالياتها.
+
+        </p>
+        <p>هذا الموقع  تم تصميمه وبرمجته  من قبل الطالبة رغد احمد ابومحفوظ </p>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p data-i18n="schoolName">
+            مدرسة الخالدية الثانوية المختلطة / البادية الغربية
+        </p>
+
+        <p data-i18n="location">
+            الخالدية - محافظة المفرق - المملكة الأردنية الهاشمية
+        </p>
+
+        <p data-i18n="copyright">
+            جميع الحقوق محفوظة © 2026
+        </p>
+        <p> برمجيات الطالبة رغد احمد ابومحفوظ</p>
+
+    </footer>
+
+
+    <!-- Translation System -->
+
+    <script>
+
+        const translations = {
+
+            ar: {
+
+                schoolName: "مدرسة الخالدية الثانوية المختلطة / البادية الغربية",
+
+                home: "الرئيسية",
+
+                about: "من نحن",
+
+                news: "الأخبار",
+
+                activities: "الأنشطة",
+
+                contact: "تواصل معنا",
+
+                welcome: "مرحباً بكم في مدرسة الخالدية الثانوية المختلطة",
+
+                description: "معاً نحو تعليم متميز، وجيل مبدع، يمتلك العلم والقيم والمهارات لبناء المستقبل.",
+
+                discover: "اكتشف مدرستنا",
+
+                greeting: "أهلاً وسهلاً بكم",
+
+                intro: "نرحب بكم في الموقع الإلكتروني لمدرسة الخالدية الثانوية المختلطة، منصتكم للتعرف على المدرسة وأنشطتها وإنجازاتها ومتابعة آخر أخبارها وفعالياتها.",
+
+                location: "الخالدية - محافظة المفرق - المملكة الأردنية الهاشمية",
+
+                copyright: "جميع الحقوق محفوظة © 2026"
+
+            },
+
+            en: {
+
+                schoolName: "Al Khalidiyah Secondary Co-educational School / Western Badia",
+
+                home: "Home",
+
+                about: "About Us",
+
+                news: "News",
+
+                activities: "Activities",
+
+                contact: "Contact Us",
+
+                welcome: "Welcome to Al Khalidiyah Secondary Co-educational School",
+
+                description: "Together towards excellent education and a creative generation equipped with knowledge, values and skills to build the future.",
+
+                discover: "Discover Our School",
+
+                greeting: "Welcome to Our School",
+
+                intro: "Welcome to the official website of Al Khalidiyah Secondary Co-educational School, your platform to explore our school, activities, achievements and latest news.",
+
+                location: "Al Khalidiyah - Mafraq Governorate - Hashemite Kingdom of Jordan",
+
+                copyright: "All Rights Reserved © 2026"
+
+            }
+
+        };
+
+
+        // Get the saved language
+
+        let currentLanguage =
+            localStorage.getItem("schoolLanguage") || "ar";
+
+
+        const languageButton =
+            document.getElementById("languageToggle");
+
+
+        // Apply the selected language
+
+        function applyLanguage(language) {
+
+            currentLanguage = language;
+
+            document.documentElement.lang = language;
+
+            document.documentElement.dir =
+                language === "ar" ? "rtl" : "ltr";
+
+
+            // Translate all page elements
+
+            document.querySelectorAll("[data-i18n]").forEach(element => {
+
+                const key = element.getAttribute("data-i18n");
+
+                element.textContent =
+                    translations[language][key];
+
+            });
+
+
+            // Update language button
+
+            languageButton.textContent =
+                language === "ar" ? "English" : "العربية";
+
+
+            // Update page title
+
+            document.title = language === "ar"
+                ? "مدرسة الخالدية الثانوية المختلطة"
+                : "Al Khalidiyah Secondary School";
+
+        }
+
+
+        // Switch language and save the choice
+
+        function changeLanguage() {
+
+            const newLanguage =
+                currentLanguage === "ar" ? "en" : "ar";
+
+            localStorage.setItem(
+                "schoolLanguage",
+                newLanguage
+            );
+
+            applyLanguage(newLanguage);
+
+        }
+
+
+        // Language button event
+
+        languageButton.addEventListener(
+            "click",
+            changeLanguage
+        );
+
+
+        // Load saved language when opening the website
+
+        applyLanguage(currentLanguage);
+
+    </script>
+<script src="chatbot-widget.js"></script>
+</body>
+
+</html>

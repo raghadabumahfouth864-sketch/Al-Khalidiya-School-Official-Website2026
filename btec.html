@@ -1,0 +1,1197 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BTEC | مدرسة الخالدية</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background: #f7f9fa;
+    color: #183b48;
+}
+
+button {
+    font-family: inherit;
+}
+
+/* Header */
+
+header {
+    background: #073b4c;
+    color: white;
+    padding: 15px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 62px;
+    height: 62px;
+    object-fit: contain;
+    background: white;
+    border-radius: 50%;
+}
+
+.logo h2 {
+    font-size: 16px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+nav {
+    display: flex;
+    gap: 19px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: .3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #e5c46a;
+}
+
+.language-btn {
+    background: #e5c46a;
+    color: #073b4c;
+    border: none;
+    padding: 9px 17px;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Hero */
+
+.hero {
+    min-height: 440px;
+    background: linear-gradient(125deg, #073b4c, #176579);
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 65px 10%;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "BTEC";
+    position: absolute;
+    font-size: 180px;
+    font-weight: 800;
+    color: rgba(255,255,255,.055);
+    left: 5%;
+    bottom: -25px;
+    direction: ltr;
+    pointer-events: none;
+}
+
+.hero-content {
+    max-width: 760px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-label {
+    display: inline-block;
+    color: #073b4c;
+    background: #e5c46a;
+    padding: 7px 19px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+.hero p {
+    max-width: 700px;
+    color: #e4edf0;
+    font-size: 17px;
+    line-height: 2.1;
+}
+
+.hero-button {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 12px 27px;
+    background: #e5c46a;
+    color: #073b4c;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.hero-button:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+/* General Sections */
+
+.section {
+    padding: 70px 8%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.section-heading h2 {
+    color: #073b4c;
+    font-size: 30px;
+}
+
+.gold-line {
+    width: 65px;
+    height: 4px;
+    background: #d9b653;
+    margin: 15px auto;
+    border-radius: 5px;
+}
+
+.section-heading p {
+    color: #71838a;
+    line-height: 2;
+}
+
+/* Introduction */
+
+.intro-card {
+    max-width: 1050px;
+    margin: auto;
+    background: white;
+    padding: 38px;
+    border-radius: 16px;
+    border-right: 5px solid #d9b653;
+    box-shadow: 0 5px 25px rgba(0,0,0,.05);
+}
+
+.intro-card p {
+    line-height: 2.3;
+    color: #596e76;
+    font-size: 16px;
+    text-align: justify;
+}
+
+/* Feature Cards */
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 23px;
+}
+
+.feature-card {
+    background: white;
+    padding: 30px 24px;
+    text-align: center;
+    border-radius: 15px;
+    border-bottom: 4px solid #d9b653;
+    box-shadow: 0 5px 20px rgba(0,0,0,.05);
+    transition: .3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-7px);
+}
+
+.feature-icon {
+    font-size: 42px;
+    margin-bottom: 16px;
+}
+
+.feature-card h3 {
+    color: #073b4c;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    color: #71838a;
+    line-height: 2;
+    font-size: 14px;
+}
+
+/* Learning Journey */
+
+.journey-section {
+    background: #eaf1f3;
+}
+
+.journey-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.journey-card {
+    background: white;
+    padding: 28px;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.journey-number {
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 50%;
+    background: #073b4c;
+    color: #e5c46a;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0 auto 18px;
+}
+
+.journey-card h3 {
+    color: #073b4c;
+    margin-bottom: 10px;
+}
+
+.journey-card p {
+    color: #71838a;
+    font-size: 14px;
+    line-height: 2;
+}
+
+/* Specializations */
+
+.specialization-box {
+    max-width: 950px;
+    margin: auto;
+    background: white;
+    border: 1px dashed #c5d4d9;
+    border-radius: 15px;
+    padding: 35px;
+    text-align: center;
+}
+
+.specialization-box .big-icon {
+    font-size: 45px;
+    margin-bottom: 12px;
+}
+
+.specialization-box h3 {
+    color: #073b4c;
+    margin-bottom: 12px;
+    font-size: 22px;
+}
+
+.specialization-box p {
+    color: #71838a;
+    line-height: 2;
+}
+
+/* Student Projects */
+
+.projects-section {
+    background: white;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 285px));
+    justify-content: center;
+    gap: 24px;
+}
+
+.project-card {
+    background: #f7f9fa;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(0,0,0,.05);
+    transition: .3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-media {
+    height: 245px;
+    background: #eaf1f3;
+    overflow: hidden;
+}
+
+.project-media img,
+.project-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 19px;
+}
+
+.project-info h3 {
+    color: #073b4c;
+    margin-bottom: 8px;
+    font-size: 17px;
+}
+
+.project-info p {
+    color: #71838a;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* FAQ */
+
+.faq-section {
+    background: #f7f9fa;
+}
+
+.faq-list {
+    max-width: 850px;
+    margin: auto;
+    display: grid;
+    gap: 13px;
+}
+
+.faq-list details {
+    background: white;
+    border-radius: 11px;
+    padding: 19px 23px;
+    box-shadow: 0 3px 14px rgba(0,0,0,.04);
+}
+
+.faq-list summary {
+    cursor: pointer;
+    color: #073b4c;
+    font-weight: bold;
+    line-height: 1.9;
+}
+
+.faq-list details p {
+    padding-top: 15px;
+    color: #71838a;
+    line-height: 2;
+    font-size: 14px;
+}
+
+/* Contact Banner */
+
+.join-banner {
+    background: linear-gradient(120deg, #073b4c, #176579);
+    color: white;
+    text-align: center;
+    padding: 55px 8%;
+}
+
+.join-banner h2 {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.join-banner p {
+    line-height: 2;
+    color: #e2ebee;
+}
+
+/* Footer */
+
+footer {
+    background: #073b4c;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    line-height: 2.1;
+    font-size: 14px;
+}
+
+/* Responsive */
+
+@media (max-width: 850px) {
+
+    header {
+        flex-direction: column;
+    }
+
+    .header-left {
+        flex-direction: column;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 13px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero::after {
+        font-size: 110px;
+    }
+
+    .features,
+    .journey-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 50px 6%;
+    }
+
+    .intro-card {
+        padding: 25px;
+    }
+    .social-links {
+    margin-top: 18px;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #1877F2;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.social-links a:hover {
+    background: #0d5ec4;
+    transform: translateY(-3px);
+}
+
+.social-links span {
+    font-size: 23px;
+    font-weight: bold;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Header -->
+
+<header>
+
+    <div class="logo">
+        <img src="../image/logo.jfif" alt="School Logo">
+        <h2 data-i18n="schoolName">
+            مدرسة الخالدية الثانوية المختلطة
+        </h2>
+    </div>
+
+    <div class="header-left">
+
+        <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="about.html">من نحن</a>
+    <a href="btec.html">BTEC</a>
+    <a href="activities.html">الأنشطة</a>
+     <a href="https://www.facebook.com/share/1FtFyZgWst/">فيسبوك</a>
+            <a href="https://eman98856.github.io/eman.abu.mahfouth09/">حاسبة معدل التوجيهي </a>
+</a>
+        </nav>
+
+        <button class="language-btn" id="languageToggle">
+            English
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- Hero -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-label">BTEC Education</span>
+
+        <h1 data-i18n="heroTitle">
+            التعليم المهني والتقني BTEC
+        </h1>
+
+        <p data-i18n="heroDescription">
+            نتعلم لنبدع، ونطبق المعرفة لنكتسب المهارات،
+            ونحوّل الأفكار إلى مشاريع وتجارب تعليمية عملية.
+        </p>
+
+        <a href="#aboutBtec" class="hero-button" data-i18n="discover">
+            اكتشف برنامج BTEC
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- About BTEC -->
+
+<section class="section" id="aboutBtec">
+
+    <div class="section-heading">
+
+        <h2 data-i18n="aboutTitle">ما هو برنامج BTEC؟</h2>
+
+        <div class="gold-line"></div>
+
+        <p data-i18n="aboutSubtitle">
+            تعلم يجمع بين المعرفة والتطبيق وتنمية المهارات.
+        </p>
+
+    </div>
+
+    <div class="intro-card">
+
+        <p data-i18n="aboutText">
+            BTEC هو برنامج للتعليم المهني والتقني يركز على ربط
+            التعلم بالواقع العملي، من خلال الأنشطة والمشاريع
+            والتطبيقات التي تساعد الطلبة على اكتساب المعرفة
+            وتنمية المهارات والاستعداد لمتطلبات الحياة العملية.
+            ويمنح الطلبة فرصة لتطوير قدراتهم في حل المشكلات
+            والتفكير الإبداعي والعمل الجماعي وتحمل المسؤولية.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- Features -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <h2 data-i18n="featuresTitle">ماذا يميز BTEC؟</h2>
+
+        <div class="gold-line"></div>
+
+        <p data-i18n="featuresSubtitle">
+            مهارات وتجارب تساعد الطلبة على التعلم والتطور.
+        </p>
+
+    </div>
+
+    <div class="features">
+
+        <div class="feature-card">
+
+            <div class="feature-icon">💻</div>
+
+            <h3 data-i18n="feature1Title">
+                التعلم العملي
+            </h3>
+
+            <p data-i18n="feature1Text">
+                تطبيق المعرفة من خلال الأنشطة والمهام والمشاريع العملية.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">🧠</div>
+
+            <h3 data-i18n="feature2Title">
+                التفكير وحل المشكلات
+            </h3>
+
+            <p data-i18n="feature2Text">
+                تنمية التفكير المنطقي والإبداعي والقدرة على إيجاد الحلول.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">🤝</div>
+
+            <h3 data-i18n="feature3Title">
+                العمل الجماعي
+            </h3>
+
+            <p data-i18n="feature3Text">
+                تطوير التواصل والتعاون وتبادل الأفكار وتحمل المسؤولية.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Learning Journey -->
+
+<section class="section journey-section">
+
+    <div class="section-heading">
+
+        <h2 data-i18n="journeyTitle">رحلة التعلم في BTEC</h2>
+
+        <div class="gold-line"></div>
+
+        <p data-i18n="journeySubtitle">
+            من الفكرة إلى التطبيق وعرض النتائج.
+        </p>
+
+    </div>
+
+    <div class="journey-grid">
+
+        <div class="journey-card">
+
+            <div class="journey-number">01</div>
+
+            <h3 data-i18n="step1Title">التعلم والاستكشاف</h3>
+
+            <p data-i18n="step1Text">
+                اكتساب المعرفة وفهم الموضوعات والمهارات المرتبطة بالمجال.
+            </p>
+
+        </div>
+
+
+        <div class="journey-card">
+
+            <div class="journey-number">02</div>
+
+            <h3 data-i18n="step2Title">التطبيق والتنفيذ</h3>
+
+            <p data-i18n="step2Text">
+                استخدام المعرفة في تنفيذ المهام والتدرب على الحلول العملية.
+            </p>
+
+        </div>
+
+
+        <div class="journey-card">
+
+            <div class="journey-number">03</div>
+
+            <h3 data-i18n="step3Title">المشاريع والإنجاز</h3>
+
+            <p data-i18n="step3Text">
+                إعداد الأعمال والمشاريع وتوثيق النتائج والتعلم من التجربة.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Specializations -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <h2 data-i18n="specialTitle">التخصصات والمسارات</h2>
+
+        <div class="gold-line"></div>
+
+    </div>
+
+    <div class="specialization-box">
+
+        <div class="big-icon">🎓</div>
+
+        <h3 data-i18n="specialBoxTitle">
+            التخصصات المعتمدة في المدرسة
+        </h3>
+
+        <p data-i18n="specialBoxText">
+            سيتم عرض التخصصات والمسارات المتاحة في المدرسة
+            هنا، مع تعريف موجز بكل تخصص ومجالات التعلم فيه.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- Projects -->
+
+<section class="section projects-section">
+
+    <div class="section-heading">
+
+        <h2 data-i18n="projectsTitle">مشاريع وأعمال الطلبة</h2>
+
+        <div class="gold-line"></div>
+
+        <p data-i18n="projectsSubtitle">
+            مساحة لعرض إبداعات الطلبة ومشاريعهم وتجاربهم العملية.
+        </p>
+
+    </div>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+
+            <div class="project-media">
+
+                <img
+                    src="../image/WhatsApp Image 2026-11-22 at 8.37.06 PM(2).jpeg"
+                    alt="Student BTEC Project"
+                    loading="lazy"
+                >
+
+            </div>
+
+            <div class="project-info">
+
+                <h3 data-i18n="project1Title">
+                    مشروع طلابي
+                </h3>
+
+                <p data-i18n="project1Text">
+                    صورة لأحد مشاريع وأعمال طلبة BTEC.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="project-card">
+
+            <div class="project-media">
+
+                <img
+                    src="../image/WhatsApp Image 2026-11-22 at 10.59.41 AM.jpeg"
+                    alt="Student work"
+                    loading="lazy"
+                >
+
+            </div>
+
+            <div class="project-info">
+
+                <h3 data-i18n="project2Title">
+                    تطبيق عملي
+                </h3>
+
+                <p data-i18n="project2Text">
+                    عرض لتجربة تطبيقية من أعمال الطلبة.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="project-card">
+
+            <div class="project-media">
+
+                <video controls preload="metadata">
+                    <source src="../WhatsApp Video 2026-11-21 at 5.04.42 PM.mp4" type="video/mp4">
+                    Your browser does not support video.
+                </video>
+
+            </div>
+
+            <div class="project-info">
+
+                <h3 data-i18n="project3Title">
+                    فيديو من مشاريع BTEC
+                </h3>
+
+                <p data-i18n="project3Text">
+                    فيديو يوثق جانبًا من التعلم والتطبيق العملي.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section class="section faq-section">
+
+    <div class="section-heading">
+
+        <h2 data-i18n="faqTitle">أسئلة شائعة عن BTEC</h2>
+
+        <div class="gold-line"></div>
+
+    </div>
+
+    <div class="faq-list">
+
+        <details>
+
+            <summary data-i18n="question1">
+                ما الهدف من برنامج BTEC؟
+            </summary>
+
+            <p data-i18n="answer1">
+                يهدف البرنامج إلى ربط التعلم بالتطبيق العملي
+                وتنمية المعارف والمهارات لدى الطلبة.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary data-i18n="question2">
+                هل يتضمن البرنامج مشاريع عملية؟
+            </summary>
+
+            <p data-i18n="answer2">
+                يتضمن التعلم في BTEC مهامًا وأنشطة ومشاريع
+                تساعد على تطبيق المعرفة وتنمية المهارات.
+            </p>
+
+        </details>
+
+
+        <details>
+
+            <summary data-i18n="question3">
+                أين يمكن مشاهدة أعمال الطلبة؟
+            </summary>
+
+            <p data-i18n="answer3">
+                يمكن مشاهدة الصور والفيديوهات والأعمال
+                المعروضة في قسم مشاريع وأعمال الطلبة.
+            </p>
+
+        </details>
+
+    </div>
+
+</section>
+
+
+<!-- Closing Banner -->
+
+<section class="join-banner">
+
+    <h2 data-i18n="closingTitle">
+        نتعلم اليوم لنصنع إنجازات الغد
+    </h2>
+
+    <p data-i18n="closingText">
+        المعرفة أساس، والتطبيق طريق، والإبداع بداية المستقبل.
+    </p>
+
+</section>
+
+
+<!-- Footer -->
+
+<footer>
+
+    <p data-i18n="schoolName">
+        مدرسة الخالدية الثانوية المختلطة / البادية الغربية
+    </p>
+
+    <p data-i18n="location">
+        الخالدية - محافظة المفرق - المملكة الأردنية الهاشمية
+    </p>
+
+    <p data-i18n="copyright">
+        جميع الحقوق محفوظة © 2026
+    </p>
+    <div class="social-links">
+    <a href="https://www.facebook.com/share/1FtFyZgWst/"
+       target="_blank"
+       rel="noopener noreferrer">
+       <span>f</span>
+       تابعونا على Facebook
+    </a>
+</div>
+
+</footer>
+
+
+<!-- Language System -->
+
+<script>
+
+const translations = {
+
+    ar: {
+
+        schoolName: "مدرسة الخالدية الثانوية المختلطة / البادية الغربية",
+        home: "الرئيسية",
+        about: "من نحن",
+        activities: "الأنشطة",
+        news: "الأخبار",
+        contact: "تواصل معنا",
+
+        heroTitle: "التعليم المهني والتقني BTEC",
+        heroDescription: "نتعلم لنبدع، ونطبق المعرفة لنكتسب المهارات، ونحوّل الأفكار إلى مشاريع وتجارب تعليمية عملية.",
+        discover: "اكتشف برنامج BTEC",
+
+        aboutTitle: "ما هو برنامج BTEC؟",
+        aboutSubtitle: "تعلم يجمع بين المعرفة والتطبيق وتنمية المهارات.",
+        aboutText: "BTEC هو برنامج للتعليم المهني والتقني يركز على ربط التعلم بالواقع العملي، من خلال الأنشطة والمشاريع والتطبيقات التي تساعد الطلبة على اكتساب المعرفة وتنمية المهارات والاستعداد لمتطلبات الحياة العملية. ويمنح الطلبة فرصة لتطوير قدراتهم في حل المشكلات والتفكير الإبداعي والعمل الجماعي وتحمل المسؤولية.",
+
+        featuresTitle: "ماذا يميز BTEC؟",
+        featuresSubtitle: "مهارات وتجارب تساعد الطلبة على التعلم والتطور.",
+
+        feature1Title: "التعلم العملي",
+        feature1Text: "تطبيق المعرفة من خلال الأنشطة والمهام والمشاريع العملية.",
+
+        feature2Title: "التفكير وحل المشكلات",
+        feature2Text: "تنمية التفكير المنطقي والإبداعي والقدرة على إيجاد الحلول.",
+
+        feature3Title: "العمل الجماعي",
+        feature3Text: "تطوير التواصل والتعاون وتبادل الأفكار وتحمل المسؤولية.",
+
+        journeyTitle: "رحلة التعلم في BTEC",
+        journeySubtitle: "من الفكرة إلى التطبيق وعرض النتائج.",
+
+        step1Title: "التعلم والاستكشاف",
+        step1Text: "اكتساب المعرفة وفهم الموضوعات والمهارات المرتبطة بالمجال.",
+
+        step2Title: "التطبيق والتنفيذ",
+        step2Text: "استخدام المعرفة في تنفيذ المهام والتدرب على الحلول العملية.",
+
+        step3Title: "المشاريع والإنجاز",
+        step3Text: "إعداد الأعمال والمشاريع وتوثيق النتائج والتعلم من التجربة.",
+
+        specialTitle: "التخصصات والمسارات",
+        specialBoxTitle: "التخصصات المعتمدة في المدرسة",
+        specialBoxText: "سيتم عرض التخصصات والمسارات المتاحة في المدرسة هنا، مع تعريف موجز بكل تخصص ومجالات التعلم فيه.",
+
+        projectsTitle: "مشاريع وأعمال الطلبة",
+        projectsSubtitle: "مساحة لعرض إبداعات الطلبة ومشاريعهم وتجاربهم العملية.",
+
+        project1Title: "مشروع طلابي",
+        project1Text: "صورة لأحد مشاريع وأعمال طلبة BTEC.",
+
+        project2Title: "تطبيق عملي",
+        project2Text: "عرض لتجربة تطبيقية من أعمال الطلبة.",
+
+        project3Title: "فيديو من مشاريع BTEC",
+        project3Text: "فيديو يوثق جانبًا من التعلم والتطبيق العملي.",
+
+        faqTitle: "أسئلة شائعة عن BTEC",
+
+        question1: "ما الهدف من برنامج BTEC؟",
+        answer1: "يهدف البرنامج إلى ربط التعلم بالتطبيق العملي وتنمية المعارف والمهارات لدى الطلبة.",
+
+        question2: "هل يتضمن البرنامج مشاريع عملية؟",
+        answer2: "يتضمن التعلم في BTEC مهامًا وأنشطة ومشاريع تساعد على تطبيق المعرفة وتنمية المهارات.",
+
+        question3: "أين يمكن مشاهدة أعمال الطلبة؟",
+        answer3: "يمكن مشاهدة الصور والفيديوهات والأعمال المعروضة في قسم مشاريع وأعمال الطلبة.",
+
+        closingTitle: "نتعلم اليوم لنصنع إنجازات الغد",
+        closingText: "المعرفة أساس، والتطبيق طريق، والإبداع بداية المستقبل.",
+
+        location: "الخالدية - محافظة المفرق - المملكة الأردنية الهاشمية",
+        copyright: "جميع الحقوق محفوظة © 2026"
+
+    },
+
+
+    en: {
+
+        schoolName: "Al Khalidiyah Secondary Co-educational School / Western Badia",
+        home: "Home",
+        about: "About Us",
+        activities: "Activities",
+        news: "News",
+        contact: "Contact Us",
+
+        heroTitle: "BTEC Vocational and Technical Education",
+        heroDescription: "We learn to create, apply knowledge to build skills, and turn ideas into practical projects and learning experiences.",
+        discover: "Discover BTEC",
+
+        aboutTitle: "What is BTEC?",
+        aboutSubtitle: "Learning that combines knowledge, application and skills development.",
+        aboutText: "BTEC is a vocational and technical education programme that focuses on connecting learning with practical applications through activities, projects and tasks. These experiences help students gain knowledge, develop skills and prepare for practical challenges. Students also have opportunities to strengthen problem-solving, creative thinking, teamwork and responsibility.",
+
+        featuresTitle: "What Makes BTEC Special?",
+        featuresSubtitle: "Skills and experiences that support learning and development.",
+
+        feature1Title: "Practical Learning",
+        feature1Text: "Applying knowledge through activities, assignments and practical projects.",
+
+        feature2Title: "Thinking and Problem Solving",
+        feature2Text: "Developing logical and creative thinking and the ability to find solutions.",
+
+        feature3Title: "Teamwork",
+        feature3Text: "Developing communication, cooperation, sharing ideas and responsibility.",
+
+        journeyTitle: "The BTEC Learning Journey",
+        journeySubtitle: "From an idea to practical application and presenting results.",
+
+        step1Title: "Learning and Exploring",
+        step1Text: "Gaining knowledge and understanding subjects and skills related to the field.",
+
+        step2Title: "Applying and Creating",
+        step2Text: "Using knowledge to complete tasks and practise practical solutions.",
+
+        step3Title: "Projects and Achievements",
+        step3Text: "Creating projects, documenting results and learning from experience.",
+
+        specialTitle: "Specializations and Pathways",
+        specialBoxTitle: "School-approved Specializations",
+        specialBoxText: "The specializations and pathways offered by the school will be displayed here, with a brief introduction to each one.",
+
+        projectsTitle: "Student Projects and Work",
+        projectsSubtitle: "A space to showcase students' creativity, projects and practical experiences.",
+
+        project1Title: "Student Project",
+        project1Text: "A photo of a BTEC student project or piece of work.",
+
+        project2Title: "Practical Application",
+        project2Text: "A presentation of a practical student experience.",
+
+        project3Title: "BTEC Project Video",
+        project3Text: "A video documenting part of the learning and practical experience.",
+
+        faqTitle: "Frequently Asked Questions about BTEC",
+
+        question1: "What is the aim of BTEC?",
+        answer1: "The programme aims to connect learning with practical application and develop students' knowledge and skills.",
+
+        question2: "Does the programme include practical projects?",
+        answer2: "BTEC learning includes tasks, activities and projects that help students apply knowledge and develop skills.",
+
+        question3: "Where can I see students' work?",
+        answer3: "Photos, videos and student work can be viewed in the Student Projects and Work section.",
+
+        closingTitle: "Learn Today to Create Tomorrow's Achievements",
+        closingText: "Knowledge is the foundation, application is the path, and creativity is the beginning of the future.",
+
+        location: "Al Khalidiyah - Mafraq Governorate - Hashemite Kingdom of Jordan",
+        copyright: "All Rights Reserved © 2026"
+
+    }
+
+};
+
+
+// Saved Language
+
+let currentLanguage =
+    localStorage.getItem("schoolLanguage") || "ar";
+
+const languageButton =
+    document.getElementById("languageToggle");
+
+
+// Apply Language
+
+function applyLanguage(language) {
+
+    currentLanguage = language;
+
+    document.documentElement.lang = language;
+
+    document.documentElement.dir =
+        language === "ar" ? "rtl" : "ltr";
+
+    document.querySelectorAll("[data-i18n]").forEach(element => {
+
+        const key = element.getAttribute("data-i18n");
+
+        if (translations[language][key]) {
+            element.textContent = translations[language][key];
+        }
+
+    });
+
+    languageButton.textContent =
+        language === "ar" ? "English" : "العربية";
+
+    document.title = language === "ar"
+        ? "BTEC | مدرسة الخالدية"
+        : "BTEC | Al Khalidiyah School";
+
+}
+
+
+// Change and Save Language
+
+function changeLanguage() {
+
+    const newLanguage =
+        currentLanguage === "ar" ? "en" : "ar";
+
+    localStorage.setItem("schoolLanguage", newLanguage);
+
+    applyLanguage(newLanguage);
+
+}
+
+
+languageButton.addEventListener("click", changeLanguage);
+
+
+// Load Saved Language
+
+applyLanguage(currentLanguage);
+
+
+</script>
+<script src="chatbot-widget.js"></script>
+
+</body>
+</html>
